@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SparkClip — Weekly AI product videos that convert</title>
+  <meta name="description" content="SparkClip creates weekly AI-powered short videos for DTC brands. Get a free sample video in 48 hours." />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{--primary:#0F62FE;--accent:#FF6B6B;--bg:#ffffff;--text:#111827;font-family:Inter,system-ui,Arial,sans-serif}
+    body{margin:0;background:var(--bg);color:var(--text);line-height:1.45}
+    .wrap{max-width:1100px;margin:32px auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-weight:700;color:var(--primary);font-size:20px}
+    .cta{background:var(--primary);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:28px}
+    h1{font-size:32px;margin:0 0 12px}
+    .sub{color:#374151;margin-bottom:18px}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .card{border-radius:12px;padding:16px;background:#f8fafc}
+    .pricing{display:flex;gap:12px;margin-top:18px}
+    .plan{flex:1;border-radius:12px;padding:18px;border:1px solid #e6eefc}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
+    .video-thumb{background:#000;color:#fff;height:360px;display:flex;align-items:center;justify-content:center;border-radius:8px}
+    form{display:grid;gap:8px}
+    footer{margin-top:36px;color:#6b7280;font-size:14px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr} .video-thumb{height:220px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">SparkClip</div>
+      <nav>
+        <a class="cta" href="#onboard">Get a free sample</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="home">
+      <div>
+        <h1>Weekly AI‑powered product videos that convert</h1>
+        <p class="sub">Get 4 ready‑to‑post short videos in 48 hours. Scale to unlimited monthly content with performance‑focused hooks, captions, and ad cuts.</p>
+        <div class="features">
+          <div class="card">Fast turnaround</div>
+          <div class="card">Ad‑ready formats</div>
+          <div class="card">Consistent weekly output</div>
+        </div>
+
+        <div class="pricing" style="margin-top:18px">
+          <div class="plan">
+            <strong>Starter</strong>
+            <div>$199 / month</div>
+            <div>4 videos / month</div>
+          </div>
+          <div class="plan">
+            <strong>Growth</strong>
+            <div>$499 / month</div>
+            <div>10 videos / month</div>
+          </div>
+          <div class="plan">
+            <strong>Pro</strong>
+            <div>$999 / month</div>
+            <div>Unlimited + ad support</div>
+          </div>
+        </div>
+
+        <p style="margin-top:18px">
+          <a class="cta" href="#onboard">Request your free sample</a>
+        </p>
+      </div>
+
+      <aside>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #e6eefc">
+          <!-- Replace src with your sample video embed or mp4 -->
+          <video controls style="width:100%;display:block" poster="/placeholder.jpg">
+            <source src="/sample-demo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p style="font-size:13px;color:#6b7280;margin-top:8px">Sample demo — Product Quick Demo (15s)</p>
+      </aside>
+    </section>
+
+    <section id="how" style="margin-top:28px">
+      <h2>How it works</h2>
+      <ol>
+        <li><strong>Upload</strong> product images, 3 benefits, logo, and tone.</li>
+        <li><strong>We create</strong> scripts, voiceover, and 3 video variations.</li>
+        <li><strong>You review</strong> and we deliver ad‑ready files and captions.</li>
+      </ol>
+    </section>
+
+    <section id="samples" style="margin-top:18px">
+      <h2>Sample videos</h2>
+      <div class="gallery">
+        <div>
+          <div class="video-thumb">Sample 1</div>
+          <div style="margin-top:6px">Product Quick Demo — 15s</div>
+        </div>
+        <div>
+          <div class="video-thumb">Sample 2</div>
+          <div style="margin-top:6px">Social Proof Montage — 20s</div>
+        </div>
+        <div>
+          <div class="video-thumb">Sample 3</div>
+          <div style="margin-top:6px">Before/After — 12s</div>
+        </div>
+        <div>
+          <div class="video-thumb">Sample 4</div>
+          <div style="margin-top:6px">How‑to Tips — 30s</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="onboard" style="margin-top:28px">
+      <h2>Get your free sample</h2>
+      <form action="/submit-onboard" method="post" enctype="multipart/form-data">
+        <input name="company" placeholder="Brand name" required />
+        <input name="contact" placeholder="Contact email" type="email" required />
+        <input name="product" placeholder="Product name" required />
+        <textarea name="benefits" placeholder="3 short benefits (comma separated)" required></textarea>
+        <label>Upload hero images (3)</label>
+        <input name="images" type="file" accept="image/*" multiple required />
+        <label>Upload logo</label>
+        <input name="logo" type="file" accept="image/*" required />
+        <select name="tone">
+          <option value="friendly">Friendly</option>
+          <option value="luxury">Luxury</option>
+          <option value="direct">Direct response</option>
+        </select>
+        <input type="hidden" name="plan" value="free-sample" />
+        <button class="cta" type="submit">Request free sample</button>
+      </form>
+      <p style="font-size:13px;color:#6b7280;margin-top:8px">We’ll deliver a sample video within 48 hours. Two rounds of edits included.</p>
+    </section>
+
+    <footer>
+      <div>© <strong>SparkClip</strong> — hello@sparkclip.co</div>
+      <div style="margin-top:8px">Privacy • Terms</div>
+    </footer>
+  </div>
+</body>
+</html>
