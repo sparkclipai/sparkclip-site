@@ -1,139 +1,398 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Spark Marketing — Weekly AI product videos that convert</title>
-  <meta name="description" content="Spark Marketing creates weekly AI-powered short videos for DTC brands. Get a free sample video in 48 hours." />
+  <meta name="description" content="Spark Marketing creates weekly AI-powered short videos for DTC brands. Request a free sample video and scale your content." />
   <link rel="icon" href="/favicon.ico" />
   <style>
-    :root{--primary:#0F62FE;--accent:#FF6B6B;--bg:#ffffff;--text:#111827;font-family:Inter,system-ui,Arial,sans-serif}
-    body{margin:0;background:var(--bg);color:var(--text);line-height:1.45}
-    .wrap{max-width:1100px;margin:32px auto;padding:24px}
-    header{display:flex;justify-content:space-between;align-items:center}
-    .logo{font-weight:700;color:var(--primary);font-size:20px}
-    .cta{background:var(--primary);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:28px}
-    h1{font-size:32px;margin:0 0 12px}
-    .sub{color:#374151;margin-bottom:18px}
-    .features{display:flex;gap:12px;flex-wrap:wrap}
-    .card{border-radius:12px;padding:16px;background:#f8fafc}
-    .pricing{display:flex;gap:12px;margin-top:18px}
-    .plan{flex:1;border-radius:12px;padding:18px;border:1px solid #e6eefc}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:18px}
-    .video-thumb{background:#000;color:#fff;height:360px;display:flex;align-items:center;justify-content:center;border-radius:8px}
-    footer{margin-top:36px;color:#6b7280;font-size:14px}
-    @media(max-width:900px){.hero{grid-template-columns:1fr} .video-thumb{height:220px}}
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#06b6d4; /* teal */
+      --accent-2:#7c3aed; /* violet */
+      --white:#ffffff;
+      --radius:12px;
+      --max-width:1100px;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg) 0%, #071026 100%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    .wrap{
+      max-width:var(--max-width);
+      margin:36px auto;
+      padding:28px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--white);
+    }
+
+    .logo-mark{
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#021022;
+      font-size:18px;
+      box-shadow:0 6px 18px rgba(12,18,30,0.6);
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:18px;
+      letter-spacing:0.2px;
+    }
+
+    nav{display:flex;gap:12px;align-items:center}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      cursor:pointer;
+      border:0;
+    }
+
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#021022;
+      box-shadow:0 8px 24px rgba(7,18,30,0.45);
+    }
+
+    .btn-ghost{
+      background:transparent;
+      color:var(--white);
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-top:28px;
+    }
+
+    .eyebrow{
+      color:var(--accent);
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:0.6px;
+      text-transform:uppercase;
+    }
+
+    h2.hero-title{
+      margin:12px 0 8px;
+      font-size:32px;
+      line-height:1.05;
+      color:var(--white);
+    }
+
+    p.lead{
+      margin:0 0 18px;
+      color:var(--muted);
+      max-width:56ch;
+    }
+
+    .feature-list{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .chip{
+      background:rgba(255,255,255,0.03);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .pricing{
+      display:flex;
+      gap:12px;
+      margin-top:22px;
+      align-items:stretch;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:18px;
+      border:1px solid rgba(255,255,255,0.04);
+      flex:1;
+      min-width:0;
+    }
+
+    .plan-title{font-weight:700;font-size:16px;margin-bottom:6px}
+    .plan-price{font-weight:800;font-size:20px;margin-bottom:6px;color:var(--white)}
+    .plan-desc{color:var(--muted);font-size:13px;margin-bottom:12px}
+
+    .plan-cta{
+      display:inline-block;
+      margin-top:8px;
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:10px;
+      background:var(--accent);
+      color:#021022;
+      font-weight:700;
+    }
+
+    aside.card-media{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.04);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+
+    .video-wrap{width:100%;height:100%;display:block;background:#000}
+    .video-wrap video{width:100%;height:auto;display:block}
+
+    main section{margin-top:36px}
+
+    .how-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .how-step{
+      background:rgba(255,255,255,0.02);
+      padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .samples{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .sample-thumb{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:10px;
+      padding:12px;
+      border:1px solid rgba(255,255,255,0.03);
+      text-align:center;
+    }
+
+    .onboard{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .onboard p{color:var(--muted);margin:0 0 8px}
+
+    iframe.typeform{
+      width:100%;
+      height:640px;
+      border:0;
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(2,6,23,0.6);
+    }
+
+    footer{
+      margin-top:36px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,0.03);
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      font-size:14px;
+    }
+
+    a.text-link{color:var(--accent);text-decoration:none}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .hero aside{order:-1}
+      .pricing{flex-direction:column}
+      .how-grid{grid-template-columns:1fr}
+      iframe.typeform{height:720px}
+    }
+
+    @media (max-width:520px){
+      .wrap{padding:18px;margin:18px auto}
+      h2.hero-title{font-size:24px}
+      .logo-mark{width:40px;height:40px;font-size:16px}
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="wrap" role="document">
     <header>
-      <div class="logo">Spark Marketing</div>
-      <nav>
-        <a class="cta" href="#onboard">Get a free sample</a>
+      <a class="brand" href="/" aria-label="Spark Marketing home">
+        <div class="logo-mark" aria-hidden="true">SM</div>
+        <div>
+          <h1>Spark Marketing</h1>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px">AI product videos for DTC brands</div>
+        </div>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a class="btn btn-ghost" href="#how">How it works</a>
+        <a class="btn btn-ghost" href="#samples">Samples</a>
+        <a class="btn btn-primary" href="#onboard">Get a free sample</a>
       </nav>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero" id="home" aria-labelledby="hero-title">
       <div>
-        <h1>Weekly AI powered product videos that convert</h1>
-        <p class="sub">Get 4 ready‑to‑post short videos in 48 hours. Scale to unlimited monthly content with performance‑focused hooks, captions, and ad cuts.</p>
-        <div class="features">
-          <div class="card">Fast turnaround</div>
-          <div class="card">Ad ready formats</div>
-          <div class="card">Consistent weekly output</div>
+        <div class="eyebrow">Weekly video production</div>
+        <h2 class="hero-title" id="hero-title">Short, ad‑ready product videos that convert</h2>
+        <p class="lead">We create performance‑focused short videos for DTC brands. Fast turnaround, consistent weekly output, and ad‑ready cuts so you can scale creative without hiring a full team.</p>
+
+        <div class="feature-list" aria-hidden="true">
+          <div class="chip">48‑hour sample</div>
+          <div class="chip">Ad formats included</div>
+          <div class="chip">Captions & hooks</div>
         </div>
 
-        <div class="pricing" style="margin-top:18px">
-          <div class="plan">
-            <strong>Starter</strong>
-            <div>$199 / month</div>
-            <div>4 videos / month</div>
-            <p style="margin-top:12px">
-              <a class="cta" href="https://buy.stripe.com/3cIeVf3X97bb46zfkS1ZS00">Choose Starter</a>
-            </p>
+        <div class="pricing" aria-label="Pricing plans">
+          <div class="card" role="region" aria-labelledby="starter-title">
+            <div id="starter-title" class="plan-title">Starter</div>
+            <div class="plan-price">$199 <span style="font-weight:600;font-size:13px;color:var(--muted)">/ month</span></div>
+            <div class="plan-desc">4 videos per month • Best for testing</div>
+            <a class="plan-cta" href="https://buy.stripe.com/3cIeVf3X97bb46zfkS1ZS00" target="_blank" rel="noopener noreferrer">Choose Starter</a>
           </div>
 
-          <div class="plan">
-            <strong>Growth</strong>
-            <div>$499 / month</div>
-            <div>10 videos / month</div>
-            <p style="margin-top:12px">
-              <a class="cta" href="https://buy.stripe.com/dRm5kFalx0MNeLd0pY1ZS01">Choose Growth</a>
-            </p>
+          <div class="card" role="region" aria-labelledby="growth-title">
+            <div id="growth-title" class="plan-title">Growth</div>
+            <div class="plan-price">$499 <span style="font-weight:600;font-size:13px;color:var(--muted)">/ month</span></div>
+            <div class="plan-desc">10 videos per month • Scale creative</div>
+            <a class="plan-cta" href="https://buy.stripe.com/dRm5kFalx0MNeLd0pY1ZS01" target="_blank" rel="noopener noreferrer">Choose Growth</a>
           </div>
 
-          <div class="plan">
-            <strong>Pro</strong>
-            <div>$999 / month</div>
-            <div>Unlimited + ad support</div>
-            <p style="margin-top:12px">
-              <a class="cta" href="https://buy.stripe.com/00w9AV79l2UVcD58Wu1ZS02">Choose Pro</a>
-            </p>
+          <div class="card" role="region" aria-labelledby="pro-title">
+            <div id="pro-title" class="plan-title">Pro</div>
+            <div class="plan-price">$999 <span style="font-weight:600;font-size:13px;color:var(--muted)">/ month</span></div>
+            <div class="plan-desc">Unlimited videos + ad support • Enterprise</div>
+            <a class="plan-cta" href="https://buy.stripe.com/00w9AV79l2UVcD58Wu1ZS02" target="_blank" rel="noopener noreferrer">Choose Pro</a>
           </div>
         </div>
 
         <p style="margin-top:18px">
-          <a class="cta" href="#onboard">Request your free sample</a>
+          <a class="btn btn-primary" href="#onboard">Request your free sample</a>
         </p>
       </div>
 
-      <aside>
-        <div style="border-radius:12px;overflow:hidden;border:1px solid #e6eefc">
-          <video controls style="width:100%;display:block" poster="/placeholder.jpg">
+      <aside class="card-media" aria-hidden="false">
+        <div class="video-wrap" role="img" aria-label="Sample demo video">
+          <video controls poster="/placeholder.jpg" preload="metadata">
             <source src="/sample-demo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+            <!-- Fallback text for browsers that don't support video -->
+            Your browser does not support the video tag. Visit our site on a modern browser to view the sample.
           </video>
         </div>
-        <p style="font-size:13px;color:#6b7280;margin-top:8px">Sample demo — Product Quick Demo (15s)</p>
+        <div style="padding:12px;color:var(--muted);font-size:13px">Sample demo — Product Quick Demo (15s)</div>
       </aside>
     </section>
 
-    <section id="how" style="margin-top:28px">
-      <h2>How it works</h2>
-      <ol>
-        <li><strong>Upload</strong> your product details and assets via the onboarding form.</li>
-        <li><strong>We create</strong> scripts, voiceover, and 3 video variations.</li>
-        <li><strong>You review</strong> and we deliver ad‑ready files and captions.</li>
-      </ol>
-    </section>
+    <main>
+      <section id="how" aria-labelledby="how-title">
+        <h3 id="how-title" style="margin:0;font-size:20px">How it works</h3>
+        <div class="how-grid" role="list" aria-label="How it works steps">
+          <div class="how-step" role="listitem">
+            <strong>1. Submit</strong>
+            <div style="color:var(--muted);margin-top:8px">Fill the onboarding form with product details and asset links.</div>
+          </div>
+          <div class="how-step" role="listitem">
+            <strong>2. We create</strong>
+            <div style="color:var(--muted);margin-top:8px">Scripts, voiceover, and 3 video variations tailored to your product.</div>
+          </div>
+          <div class="how-step" role="listitem">
+            <strong>3. You review</strong>
+            <div style="color:var(--muted);margin-top:8px">Two rounds of edits, final files, captions, and ad cuts delivered to your folder.</div>
+          </div>
+        </div>
+      </section>
 
-    <section id="samples" style="margin-top:18px">
-      <h2>Sample videos</h2>
-      <div class="gallery">
-        <div>
-          <div class="video-thumb">Sample 1</div>
-          <div style="margin-top:6px">Product Quick Demo — 15s</div>
+      <section id="samples" aria-labelledby="samples-title">
+        <h3 id="samples-title" style="margin:0;font-size:20px">Sample videos</h3>
+        <div class="samples" role="list">
+          <div class="sample-thumb" role="listitem">
+            <div style="height:120px;background:#071226;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted)">Product Quick Demo — 15s</div>
+            <div style="margin-top:8px;color:var(--muted)">Short demo focused on features and CTA.</div>
+          </div>
+          <div class="sample-thumb" role="listitem">
+            <div style="height:120px;background:#071226;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted)">Social Proof Montage — 20s</div>
+            <div style="margin-top:8px;color:var(--muted)">Testimonials and UGC style edits.</div>
+          </div>
+          <div class="sample-thumb" role="listitem">
+            <div style="height:120px;background:#071226;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted)">Before / After — 12s</div>
+            <div style="margin-top:8px;color:var(--muted)">Visual transformation with strong hook.</div>
+          </div>
+          <div class="sample-thumb" role="listitem">
+            <div style="height:120px;background:#071226;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted)">How‑to Tips — 30s</div>
+            <div style="margin-top:8px;color:var(--muted)">Educational short with product use cases.</div>
+          </div>
         </div>
-        <div>
-          <div class="video-thumb">Sample 2</div>
-          <div style="margin-top:6px">Social Proof Montage — 20s</div>
-        </div>
-        <div>
-          <div class="video-thumb">Sample 3</div>
-          <div style="margin-top:6px">Before/After — 12s</div>
-        </div>
-        <div>
-          <div class="video-thumb">Sample 4</div>
-          <div style="margin-top:6px">How‑to Tips — 30s</div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="onboard" style="margin-top:28px">
-      <h2>Get your free sample</h2>
-      <p>Fill out this short onboarding form so we can create your first sample video:</p>
-      <iframe src="https://form.typeform.com/to/LcKyknte" width="100%" height="600" style="border:none;"></iframe>
-      <p style="font-size:13px;color:#6b7280;margin-top:8px">
-        After you submit the form, we’ll create your client folder, review your assets, and deliver a sample video within 48 hours.
-      </p>
-    </section>
+      <section id="onboard" class="onboard" aria-labelledby="onboard-title">
+        <h3 id="onboard-title" style="margin:0;font-size:20px">Get your free sample</h3>
+        <p>Fill out this short onboarding form so we can create your first sample video. If you don't have a Drive link yet, upload your assets to Google Drive and paste the folder link in the form (set sharing to "Anyone with the link can view").</p>
+
+        <!-- Typeform embed -->
+        <iframe
+          class="typeform"
+          title="Spark Marketing onboarding form"
+          src="https://form.typeform.com/to/LcKyknte"
+          allow="camera; microphone; autoplay; encrypted-media"
+          loading="lazy"
+        ></iframe>
+
+        <p style="color:var(--muted);font-size:13px;margin-top:6px">After submission we create a client folder, notify you, and deliver a sample within 48 hours.</p>
+      </section>
+    </main>
 
     <footer>
-      <div>© <strong>Spark Marketing</strong> — hello@sparkmarketing.co</div>
-      <div style="margin-top:8px">Privacy • Terms</div>
+      <div>© <strong>Spark Marketing</strong> — <a class="text-link" href="mailto:hello@sparkmarketing.co">hello@sparkmarketing.co</a></div>
+      <div style="color:var(--muted)">Privacy • Terms</div>
     </footer>
   </div>
 </body>
 </html>
+```
